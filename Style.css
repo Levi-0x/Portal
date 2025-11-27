@@ -1,0 +1,132 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0)  , rgba(0,0,0,0.1)) , url(cu.jpeg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* For the small texts in the form */
+.mask {
+color: transparent;
+font-size: 1.3rem;
+font-weight: 600;
+color: rgb(39, 39, 39);
+}
+
+/* The main container */
+.login-container{
+position: relative;
+width: 33rem;
+height: 33rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 1rem 2rem;
+border-radius: 30px;
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+border: 1px solid rgba(0, 0, 0, 0.2);    
+transition:all 0.3s ease-in-out 0s;
+overflow: hidden;
+}
+/* For onload animation */
+.unloaded {
+transform:translateY(30px);
+}
+.loaded{
+transform: translateY(0px);
+backdrop-filter: blur(12px);
+transition: all 0.5s ease-in-out;
+}
+.login-container:hover{
+transform: translateY(-5px);
+}
+
+/* For the CU logo */
+.logo{
+width: 150px;
+height: 150px;
+margin-bottom: 1.5rem;
+border-radius: 50%;
+background-color: transparent;
+}
+
+.login-btn{
+width: 100%;
+height: 3rem;
+font-size: 1.2rem;
+font-weight: 600;
+border-radius:5px;
+border: none;
+color: white;
+text-align: center;
+margin-top: 3rem;
+margin-bottom: 1rem;
+box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+background-color: rgb(55, 55, 55);
+transition: all 0.3s ease-in-out;
+}
+.login-btn:hover{
+background-color: rgb(42, 42, 42);
+}
+.login-btn:active{
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* For the Username and Password input boxes */
+.form {
+width: 100%;
+height: 3rem;
+font-size: 1.2rem;
+font-weight: 600;
+border: solid grey;
+outline: none;
+border-radius:5px;
+}
+#username{
+margin-bottom: 2rem;
+padding: 1rem;
+}
+#password{
+  padding:1rem;
+  padding-right: 3rem;
+
+}
+
+/* To hold the eye(show and hide) icon and the password input box */
+.pwd-container{
+position: relative;
+width: 100%;
+display: flex;
+justify-content: end;
+align-items: center;
+}
+.hide-pwd{
+position: absolute;
+right: 1rem ;
+}
+
+/* For the underline animation under "forgot password ?" */
+.forgot::after {
+content: '';
+display: block;   
+width: 0;
+height: 2.5px;
+background-color: rgb(255, 255, 255);
+transition: width 0.3s ease-out;
+}
+
+.forgot:hover::after {
+width: 100%;
+}
