@@ -4,11 +4,15 @@
   box-sizing: border-box;
 }
 body{
-  min-height: 100vh;
+
+}
+
+.bod{
+    min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0,0,0,0)  , rgba(0,0,0,0.1)) , url(cu.jpeg) ;
+  background: linear-gradient(rgba(0,0,0,0)  , rgba(0,0,0,0.1)) , url(Images/cu.jpeg) ;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -130,3 +134,4 @@ transition: width 0.3s ease-out;
 .forgot:hover::after {
 width: 100%;
 }
+
