@@ -1,222 +1,229 @@
-    *{
-    padding: 0;
-    margin:0 ;
-    box-sizing: border-box;
-    }
+*{
+padding: 0;
+margin:0 ;
+box-sizing: border-box;
+}
 
-    :root{
-    --primary: ;
-    --secondary: ;
-    --tertiary: ;
-    --text-color: ;
-    }
+:root{
+--primary: ;
+--secondary: ;
+--tertiary: ;
+--text-color: ;
+}
 
-    nav{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5rem;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
-    background-color: rgb(214, 214, 214);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    }
+nav{
+position: sticky;
+top: 0;
+left: 0;
+width: 100%;
+height: 5rem;
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+backdrop-filter: blur(10px);
+background-color: rgb(214, 214, 214);
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+z-index: 2;
+}
+.details {
+position: relative;  
+margin-right: 2rem;
+}
+.details .chevron {
+transition: transform 0.3s ease;
+}
 
-    .details {
-    position: relative;  /* ADD THIS */
-    margin-right: 2rem;
-    }
-    .nav-menu::-webkit-details-marker {
-    display: none;
-    }
+.details[open] .chevron {
+transform: rotate(180deg);
+}
 
-    .nav-menu {
-    /* REMOVE position: relative */
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    }
+.nav-menu::-webkit-details-marker {
+display: none;
+}
 
-    .dropdown-menu {
-    position: absolute;
-    top: calc(100% + 1.3rem);  /* CHANGE from bottom: -15rem */
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: min(16rem , 20rem);
-    height: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: white ;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    /* rest stays the same */
-    }
-    .dropdown-menu ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
-    width: 100%;
-    }
-    .dropdown-menu ul li{
-    border-bottom: 1px solid #8989897a; /* Divider line */
-    }
-    .dropdown-menu ul li:first-child {
-    font-size: 0.9rem;
-    padding: 0.8rem 0;
-    letter-spacing: 1px;
-    color: #666;
-    margin: 0 auto;
-    }
-    .dropdown-menu button{
-    display: flex;
-    width: 100%;
-    height:2.5rem;
-    justify-content: space-around;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0.8rem 1rem;
-    border: none;
-    gap: 1rem;
-    transition: all 0.3s ease-in-out,
-        border-left 0.2s ease-in-out;
-    }
+.nav-menu {
+/* REMOVE position: relative */
+display: flex;
+align-items: center;
+gap: 1rem;
+}
 
-    .dropdown-menu button:hover{
-    padding-left:1.5rem;
-        border-left: 3px solid #767676; 
+.dropdown-menu {
+position: absolute;
+top: calc(100% + 1.3rem);  /* CHANGE from bottom: -15rem */
+right: 0;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+width: min(16rem , 20rem);
+height: auto;
+overflow: hidden;
+border-radius: 10px;
+background-color: white ;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+/* rest stays the same */
+}
+.dropdown-menu ul{
+list-style: none;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+height: 100%;
+width: 100%;
+}
+.dropdown-menu ul li{
+border-bottom: 1px solid #8989897a; /* Divider line */
+}
+.dropdown-menu ul li:first-child {
+font-size: 0.9rem;
+padding: 0.8rem 0;
+letter-spacing: 1px;
+color: #666;
+margin: 0 auto;
+}
+.dropdown-menu button{
+display: flex;
+width: 100%;
+height:2.5rem;
+justify-content: space-around;
+align-items: center;
+justify-content: flex-start;
+padding: 0.8rem 1rem;
+border: none;
+gap: 1rem;
+transition: all 0.3s ease-in-out,
+    border-left 0.2s ease-in-out;
+}
 
-    }
-    /* Target the button specifically for a guaranteed color change */
-    .dropdown-menu ul li:last-child:hover button {
-    color: #ff4d4d; 
-    background-color: #fff5f5; 
-    border-left: 3px solid #ff4d4d; 
-    }
+.dropdown-menu button:hover{
+padding-left:1.5rem;
+    border-left: 3px solid #767676; 
 
-    .dropdown-menu ul li:last-child:hover svg {
-    fill: #ff4d4d;
-    }
+}
+.dropdown-menu ul li:last-child:hover button {
+color: #ff4d4d; 
+background-color: #fff5f5; 
+border-left: 3px solid #ff4d4d; 
+}
 
-
-
-    .sidebar{
-    position: fixed;
-    top: 10%;
-    left: -100%;
-    width: 20rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    backdrop-filter: blur(10px);
-    padding: 1rem 1rem;
-    color: rgb(0, 0, 0);
-    z-index: 1;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease-in-out;
-    }
-
-    .sidebar.open {
-    left: 0;
-    }
-
-    .sidebar div{
-    padding: 1rem 2rem;
-    }
-
-    .sidebar span{
-    border-radius: 10px;
-    transition: all 0.2s ease-in-out;
-        border: solid transparent 1px;
-
-    }
-
-    /* Change this */
-    .sidebar span, .sidebar div {
-    display: flex;
-    align-items: center;
-    padding:  1rem;
-    width: 100%; /* Ensure they take up the full width */
-    gap: 5px;
-    }
-
-    .sidebar span:hover{
-    background-color: rgba(0, 0, 0 , 0);
-    border: solid black 1px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
-    padding-left: 1.5rem;
-    }
-
-    .sidebar-image{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    }   
+.dropdown-menu ul li:last-child:hover svg {
+fill: #ff4d4d;
+}
 
 
 
-    .hero-container{
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 2rem;
-    gap: 2rem;
+.sidebar{
+position: fixed;
+top: 10%;
+left: -100%;
+width: 20rem;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+backdrop-filter: blur(10px);
+padding: 1rem 1rem;
+color: rgb(0, 0, 0);
+z-index: 1;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+transition: all 0.5s ease-in-out;
+}
 
-    }
-    .hero-box{
-    width: 20rem;
-    height: 22rem;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    -webkit-corner-shape: squircle;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-    }
+.sidebar.open {
+left: 0;
+}
 
-    .hero-box:hover{
-    transform: scale(1.05);
-    }
+.sidebar div{
+padding: 1rem 2rem;
+}
 
-    .hero-box img{
-    width: 100%;
-    height: 75%;
-    border-radius: 50%;
-    object-fit: contain;
-    border-radius: 20px;
-    }
+.sidebar span{
+border-radius: 10px;
+transition: all 0.2s ease-in-out;
+    border: solid transparent 1px;
+
+}
+
+/* Change this */
+.sidebar span, .sidebar div {
+display: flex;
+align-items: center;
+padding:  1rem;
+width: 100%; /* Ensure they take up the full width */
+gap: 5px;
+}
+
+.sidebar span:hover{
+background-color: rgba(0, 0, 0 , 0);
+border: solid black 1px;
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
+padding-left: 1.5rem;
+}
+
+.sidebar-image{
+width: 100px;
+height: 100px;
+object-fit: cover;
+margin-bottom: 1rem;
+}   
 
 
-    .hero-button{
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(0, 174, 0);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-    }
-    .hero-button:hover{
-    background-color: rgb(0, 211, 0);
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
-    }
+
+.hero-container{
+position: relative;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+padding: 2rem;
+gap: 2rem;
+
+}
+.hero-box{
+width: 20rem;
+height: 22rem;
+padding: 1rem 2rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+border-radius: 10px;
+-webkit-corner-shape: squircle;
+box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+transition: all 0.3s ease-in-out;
+}
+
+.hero-box:hover{
+transform: scale(1.05);
+}
+
+.hero-box img{
+width: 100%;
+height: 75%;
+border-radius: 50%;
+object-fit: contain;
+border-radius: 20px;
+}
+
+
+.hero-button{
+width: 100%;
+height: auto;
+padding: 1rem;
+font-size: 1.3rem;
+font-weight: 600;
+color: #333;
+border: 2px solid #8A2BE2; 
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+transition: all 0.3s ease-in-out;
+}
+.hero-button:hover{
+background-color: #8A2BE2;
+color: white;
+box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* Purple Glow Aura */
+}
