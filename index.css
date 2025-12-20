@@ -116,7 +116,7 @@ fill: #ff4d4d;
 
 .sidebar{
 position: fixed;
-top: 10%;
+top: 5rem;
 left: -100%;
 width: 20rem;
 height: 100%;
