@@ -1,229 +1,144 @@
 *{
-padding: 0;
-margin:0 ;
-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+
 }
 
-:root{
---primary: ;
---secondary: ;
---tertiary: ;
---text-color: ;
+.bod{
+    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0)  , rgba(0,0,0,0.1)) , url(Images/cu.jpeg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-nav{
-position: sticky;
-top: 0;
-left: 0;
-width: 100%;
-height: 5rem;
-padding: 1rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-backdrop-filter: blur(10px);
-background-color: rgb(214, 214, 214);
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-z-index: 2;
-}
-.details {
-position: relative;  
-margin-right: 2rem;
-}
-.details .chevron {
-transition: transform 0.3s ease;
+/* For the small texts in the form */
+.mask {
+color: transparent;
+font-size: 1.3rem;
+font-weight: 600;
+color: rgb(39, 39, 39);
 }
 
-.details[open] .chevron {
-transform: rotate(180deg);
-}
-
-.nav-menu::-webkit-details-marker {
-display: none;
-}
-
-.nav-menu {
-/* REMOVE position: relative */
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-
-.dropdown-menu {
-position: absolute;
-top: calc(100% + 1.3rem);  /* CHANGE from bottom: -15rem */
-right: 0;
+/* The main container */
+.login-container{
+position: relative;
+width: 33rem;
+height: 33rem;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
-align-items: flex-start;
-width: min(16rem , 20rem);
-height: auto;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 1rem 2rem;
+border-radius: 30px;
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+border: 1px solid rgba(0, 0, 0, 0.2);    
+transition:all 0.3s ease-in-out 0s;
 overflow: hidden;
-border-radius: 10px;
-background-color: white ;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-/* rest stays the same */
 }
-.dropdown-menu ul{
-list-style: none;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-height: 100%;
-width: 100%;
+/* For onload animation */
+.unloaded {
+transform:translateY(30px);
 }
-.dropdown-menu ul li{
-border-bottom: 1px solid #8989897a; /* Divider line */
-}
-.dropdown-menu ul li:first-child {
-font-size: 0.9rem;
-padding: 0.8rem 0;
-letter-spacing: 1px;
-color: #666;
-margin: 0 auto;
-}
-.dropdown-menu button{
-display: flex;
-width: 100%;
-height:2.5rem;
-justify-content: space-around;
-align-items: center;
-justify-content: flex-start;
-padding: 0.8rem 1rem;
-border: none;
-gap: 1rem;
-transition: all 0.3s ease-in-out,
-    border-left 0.2s ease-in-out;
-}
-
-.dropdown-menu button:hover{
-padding-left:1.5rem;
-    border-left: 3px solid #767676; 
-
-}
-.dropdown-menu ul li:last-child:hover button {
-color: #ff4d4d; 
-background-color: #fff5f5; 
-border-left: 3px solid #ff4d4d; 
-}
-
-.dropdown-menu ul li:last-child:hover svg {
-fill: #ff4d4d;
-}
-
-
-
-.sidebar{
-position: fixed;
-top: 5rem;
-left: -100%;
-width: 20rem;
-height: 100%;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-backdrop-filter: blur(10px);
-padding: 1rem 1rem;
-color: rgb(0, 0, 0);
-z-index: 1;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.loaded{
+transform: translateY(0px);
+backdrop-filter: blur(12px);
 transition: all 0.5s ease-in-out;
 }
-
-.sidebar.open {
-left: 0;
+.login-container:hover{
+transform: translateY(-5px);
 }
 
-.sidebar div{
-padding: 1rem 2rem;
+/* For the CU logo */
+.logo{
+width: 150px;
+height: 150px;
+margin-bottom: 1.5rem;
+border-radius: 50%;
+background-color: transparent;
 }
 
-.sidebar span{
-border-radius: 10px;
-transition: all 0.2s ease-in-out;
-    border: solid transparent 1px;
-
-}
-
-/* Change this */
-.sidebar span, .sidebar div {
-display: flex;
-align-items: center;
-padding:  1rem;
-width: 100%; /* Ensure they take up the full width */
-gap: 5px;
-}
-
-.sidebar span:hover{
-background-color: rgba(0, 0, 0 , 0);
-border: solid black 1px;
-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
-padding-left: 1.5rem;
-}
-
-.sidebar-image{
-width: 100px;
-height: 100px;
-object-fit: cover;
-margin-bottom: 1rem;
-}   
-
-
-
-.hero-container{
-position: relative;
-min-height: 100vh;
+.login-btn {
 display: flex;
 justify-content: center;
 align-items: center;
-flex-direction: row;
-flex-wrap: wrap;
-padding: 2rem;
-gap: 2rem;
-
-}
-.hero-box{
-width: 20rem;
-height: 22rem;
-padding: 1rem 2rem;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-border-radius: 10px;
--webkit-corner-shape: squircle;
-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+width: 100%;
+height: 3rem;
+border-radius:5px;
+margin-top: 3rem;
+margin-bottom: 1rem;
+box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+background-color: rgb(55, 55, 55);
 transition: all 0.3s ease-in-out;
 }
-
-.hero-box:hover{
-transform: scale(1.05);
+.login-btn:hover{
+background-color: rgb(42, 42, 42);
 }
-
-.hero-box img{
-width: 100%;
-height: 75%;
-border-radius: 50%;
-object-fit: contain;
-border-radius: 20px;
+.login-btn:active{
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.8);
 }
-
-
-.hero-button{
-width: 100%;
-height: auto;
-padding: 1rem;
-font-size: 1.3rem;
+.login-btn button{
+background-color: transparent;
+font-size: 1.2rem;
 font-weight: 600;
-color: #333;
-border: 2px solid #8A2BE2; 
-border-radius: 10px;
-background-color: rgb(255, 255, 255);
-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-transition: all 0.3s ease-in-out;
-}
-.hero-button:hover{
-background-color: #8A2BE2;
+border: none;
 color: white;
-box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* Purple Glow Aura */
+
+
 }
+
+/* For the Username and Password input boxes */
+.form {
+width: 100%;
+height: 3rem;
+font-size: 1.2rem;
+font-weight: 600;
+border: solid grey;
+outline: none;
+border-radius:5px;
+}
+#username{
+margin-bottom: 2rem;
+padding: 1rem;
+}
+#password{
+  padding:1rem;
+  padding-right: 3rem;
+
+}
+
+/* To hold the eye(show and hide) icon and the password input box */
+.pwd-container{
+position: relative;
+width: 100%;
+display: flex;
+justify-content: end;
+align-items: center;
+}
+.hide-pwd{
+position: absolute;
+right: 1rem ;
+}
+
+/* For the underline animation under "forgot password ?" */
+.forgot::after {
+content: '';
+display: block;   
+width: 0;
+height: 2.5px;
+background-color: rgb(255, 255, 255);
+transition: width 0.3s ease-out;
+}
+
+.forgot:hover::after {
+width: 100%;
+}
+
