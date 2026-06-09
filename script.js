@@ -3,16 +3,13 @@ const pwdImage = document.querySelector('.hide-pwd');
 const pwdInput = document.querySelector('#password');
 const container = document.querySelector('.login-container')
 
-const sidebar = document.querySelector('.sidebar');
-const nav = document.querySelector('nav');
-const menuIcon = document.getElementById('menu-icon');
-
 
 
 
 window.addEventListener("DOMContentLoaded", () => {
     container.classList.add('loaded');
 })
+
 
 function ShowHide() {
 
@@ -28,15 +25,21 @@ function ShowHide() {
 
 }
 
-menuIcon.addEventListener('click', slide);
 
-function slide() {
-    sidebar.classList.toggle('open');
-}
-document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !nav.contains(e.target)) {
-        sidebar.classList.remove('open');
+    function login() {
+    const username = document.querySelector("#username").value
+    const password = document.querySelector("#password")
+    password.type = "text"
+    const pwd = password.value 
+
+    if(username.trim() === "" || pwd.trim() === ""){
+        alert("Please fill out both password and username")
+        return
     }
-});
+
+    window.location.href = "page_1.html";
+    }
+
+    document.querySelector("#login-btn").addEventListener("click" , login )
 
 
